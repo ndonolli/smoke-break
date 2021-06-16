@@ -1,0 +1,14 @@
+;; shadow-cljs configuration
+{:source-paths ["src/main"]
+
+ :dependencies [[reagent "1.0.0"]
+                [binaryage/devtools "0.9.10"]]
+
+ :builds {:app {:target :browser
+                :output-dir "public/js"
+                :asset-path "/js"
+                :modules {:main {:entries [smoke-break.core]}}
+                :devtools {:http-root "public"
+                           :repl-init-ns smoke-break.core
+                           :http-port 3000
+                           :preloads [shadow.remote.runtime.cljs.browser]}}}}
